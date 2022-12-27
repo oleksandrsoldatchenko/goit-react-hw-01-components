@@ -4,7 +4,7 @@ import { StatsTitle, StatsBox, Label, Percentage } from './Statistics.styled';
 
 import { Box } from '../Box';
 
-export const Statistics = ({ title = 'Upload stats', stats }) => {
+export const Statistics = ({ title, stats }) => {
   return (
     <Box background="rgb(222, 222, 222)" borderRadius={14} padding={16}>
 
@@ -39,9 +39,9 @@ Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
-      label: PropTypes.string,
-      percentage: PropTypes.number,
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
     })
   ),
 };
